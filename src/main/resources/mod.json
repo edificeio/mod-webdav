@@ -1,0 +1,11 @@
+{
+  "main":"fr.wseduc.webdav.WebDav",
+
+  "description":"WebDav module",
+  "licenses": ["The Apache Software License Version 2.0"],
+  "author": "Damien BOISSIN",
+
+  "keywords": ["webdav"],
+  "homepage": "https://github.com/web-education/mod-webdav"
+
+}

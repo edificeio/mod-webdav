@@ -1,0 +1,45 @@
+apply from: "gradle/vertx.gradle"
+
+
+dependencies {
+	compile "com.github.lookfirst:sardine:$sardineVersion"
+}
+
+test {
+
+}
+
+def configurePom(def pom) {
+  pom.project {
+    name rootProject.name
+    description 'WebDav module'
+    inceptionYear '2014'
+    packaging 'jar'
+
+    url 'https://github.com/web-education/mod-webdav'
+
+    developers {
+      developer {
+        id 'dboissin'
+        name 'Damien BOISSIN'
+        email 'damien.boissin@web-education.net'
+      }
+    }
+
+    scm {
+      url 'https://github.com/web-education/mod-webdav.git'
+    }
+
+    licenses {
+      license {
+        name 'The Apache Software License, Version 2.0'
+        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+        distribution 'repo'
+      }
+    }
+
+    properties {
+      setProperty('project.build.sourceEncoding', 'UTF8')
+    }
+  }
+}
