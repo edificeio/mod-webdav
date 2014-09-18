@@ -27,6 +27,8 @@ def configurePom(def pom) {
     }
 
     scm {
+      connection 'scm:git:ssh://git@github.com:web-education/mod-webdav.git'
+      developerConnection 'scm:git:ssh://git@github.com:web-education/mod-webdav.git'
       url 'https://github.com/web-education/mod-webdav.git'
     }
 
