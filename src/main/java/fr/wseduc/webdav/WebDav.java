@@ -21,10 +21,10 @@ import com.github.sardine.SardineFactory;
 import com.github.sardine.impl.SardineImpl;
 import org.apache.http.conn.socket.ConnectionSocketFactory;
 import org.apache.http.conn.ssl.*;
+import io.vertx.core.Handler;
+import io.vertx.core.eventbus.Message;
+import io.vertx.core.json.JsonObject;
 import org.vertx.java.busmods.BusModBase;
-import org.vertx.java.core.Handler;
-import org.vertx.java.core.eventbus.Message;
-import org.vertx.java.core.json.JsonObject;
 
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
@@ -43,8 +43,8 @@ public class WebDav extends BusModBase implements Handler<Message<JsonObject>> {
 	@Override
 	public void start() {
 		super.start();
-		credentials = config.getObject("credentials", new JsonObject());
-		vertx.eventBus().registerHandler(config.getString("address", "webdav"), this);
+		credentials = config.getJsonObject("credentials", new JsonObject());
+		vertx.eventBus().consumer(config.getString("address", "webdav"), this);
 	}
 
 	@Override
@@ -91,7 +91,7 @@ public class WebDav extends BusModBase implements Handler<Message<JsonObject>> {
 			sendError(message, e.getMessage(), e);
 			return null;
 		}
-		JsonObject credential = credentials.getObject(host);
+		JsonObject credential = credentials.getJsonObject(host);
 		Sardine sardine;
 		if (credential != null) {
 			if (credential.getBoolean("insecure", false)) {
