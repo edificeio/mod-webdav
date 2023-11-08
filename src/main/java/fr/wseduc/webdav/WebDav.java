@@ -19,6 +19,7 @@ package fr.wseduc.webdav;
 import com.github.sardine.Sardine;
 import com.github.sardine.SardineFactory;
 import com.github.sardine.impl.SardineImpl;
+import io.vertx.core.Promise;
 import org.apache.http.conn.socket.ConnectionSocketFactory;
 import org.apache.http.conn.ssl.*;
 import io.vertx.core.Handler;
@@ -41,8 +42,8 @@ public class WebDav extends BusModBase implements Handler<Message<JsonObject>> {
 	private JsonObject credentials;
 
 	@Override
-	public void start() {
-		super.start();
+	public void start(final Promise<Void> startPromise) throws Exception {
+		super.start(startPromise);
 		credentials = config.getJsonObject("credentials", new JsonObject());
 		vertx.eventBus().consumer(config.getString("address", "webdav"), this);
 	}
