@@ -21,3 +21,5 @@ test-tmp
 *.class
 mods
 classes
+.env
+dependency-reduced-pom.xml
