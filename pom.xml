@@ -29,7 +29,7 @@
     </repositories>
 
     <properties><!-- Reporter les versions des dépendances de gradle.properties -->
-        <web-utils.version>3.0-SNAPSHOT</web-utils.version>
+        <web-utils.version>3.1-SNAPSHOT</web-utils.version>
         <sardine.version>5.1</sardine.version>
     </properties>
 
