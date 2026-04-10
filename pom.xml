@@ -4,53 +4,48 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>io.edifice</groupId>
-        <artifactId>app-parent</artifactId>
-        <version>1.2.0</version>
-    </parent>
-
-    <groupId>fr.wseduc</groupId>
-    <artifactId>mod-webdav</artifactId>
-    <version>2.1-SNAPSHOT</version>
-
-    <scm>
-        <connection>scm:git:https://github.com/edificeio/mod-webdav.git</connection>
-        <developerConnection>scm:git:https://github.com/edificeio/mod-webdav.git</developerConnection>
-        <url>https://github.com/edificeio/mod-webdav</url>
-    </scm>
-
-    <repositories>
-        <repository>
-            <id>ode</id>
-            <name>ODE Repository</name>
-            <url>https://maven.opendigitaleducation.com/nexus/content/groups/public</url>
-        </repository>
-    </repositories>
-
-    <properties>
-        <web-utils.version>3.3-SNAPSHOT</web-utils.version>
-        <sardine.version>5.1</sardine.version>
-    </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>io.vertx</groupId>
-            <artifactId>vertx-core</artifactId>
-            <version>${vertxVersion}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>fr.wseduc</groupId>
-            <artifactId>web-utils</artifactId>
-            <version>${web-utils.version}</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.github.lookfirst</groupId>
-            <artifactId>sardine</artifactId>
-            <version>${sardine.version}</version>
-            <scope>compile</scope>
-        </dependency>
-    </dependencies>
+  <parent>
+    <groupId>io.edifice</groupId>
+    <artifactId>app-parent</artifactId>
+        <version>1.2.1</version>
+  </parent>
+  <groupId>fr.wseduc</groupId>
+  <artifactId>mod-webdav</artifactId>
+  <version>2.1-separation-SNAPSHOT</version>
+  <scm>
+    <connection>scm:git:https://github.com/edificeio/mod-webdav.git</connection>
+    <developerConnection>scm:git:https://github.com/edificeio/mod-webdav.git</developerConnection>
+    <url>https://github.com/edificeio/mod-webdav</url>
+  </scm>
+  <repositories>
+    <repository>
+      <id>ode</id>
+      <name>ODE Repository</name>
+      <url>https://maven.opendigitaleducation.com/nexus/content/groups/public</url>
+    </repository>
+  </repositories>
+  <properties>
+    <web-utils.version>3.3-SNAPSHOT</web-utils.version>
+    <sardine.version>5.1</sardine.version>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-core</artifactId>
+      <version>${vertxVersion}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>fr.wseduc</groupId>
+      <artifactId>web-utils</artifactId>
+      <version>${web-utils.version}</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.github.lookfirst</groupId>
+      <artifactId>sardine</artifactId>
+      <version>${sardine.version}</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
 </project>
